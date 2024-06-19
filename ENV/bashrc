@@ -1,0 +1,31 @@
+# .bashrc
+# #-------PS1 color-----------
+# export linux200=31
+# export linux201=32
+# export linux202=33
+# #---------------------------
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+PATH=/root/.vscode-server/cli/servers/Stable-611f9bfce64f25108829dd295f54a6894e87339d/server/bin/remote-cli:/root/.local/bin:/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/script:/script:/script:/script/ENV:/script/ENV
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+ 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias aaa='chmod 700 *.sh'
+alias df='df -hT'
+alias ls='ls --color=auto -h -F'
+export PS1='\[\e[31;1m\][\u@\h\[\e[33;1m\] \w]\$ \[\e[m\]$'
